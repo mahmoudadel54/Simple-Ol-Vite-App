@@ -16,3 +16,7 @@ To generate a build ready for production:
     npm run build
 
 Then deploy the contents of the `dist` directory to your server.  You can also run `npm run serve` to serve the results of the `dist` directory for preview.
+The output of map like this:  
+![image](https://user-images.githubusercontent.com/58145645/225338188-285f14a5-a8c9-4e60-8892-24afd3fab748.png)
+
+I used field "name_1" in the data to apply different colors based on.
