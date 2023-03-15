@@ -20,17 +20,7 @@ const map = new Map({
   })
 });
 
-function getnerateColorRandomly() {
-
-  let newColor;
-  do {
-    newColor = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
-
-  } while (newColor.length < 7) {
-    return newColor;
-  }
-
-}
+//custom style function to apply on vector layer
 const styleFunc = (feat) => {
   const styles = {};
   let color = 'red'
@@ -42,9 +32,9 @@ const styleFunc = (feat) => {
     case 'Ash Sharqiyah':
       color = 'red';
       break;
-case "Al Qahirah":
-color='black'  
-break;
+    case "Al Qahirah":
+      color = 'black'
+      break;
     case 'Aswan':
       color = 'orange'
       break;
@@ -113,7 +103,7 @@ break;
     );
   return styles[feat.getGeometry().getType()];
 }
-
+//adding layer from geoserver 
 let vecLayer = new VectorLayer({
   source: new VectorSource({
     url: "https://geowebservices.stanford.edu/geoserver/wfs?request=getFeature&outputformat=application/json&typeName=druid:vn895fq9113",
